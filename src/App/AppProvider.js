@@ -1,4 +1,4 @@
- import React from 'react'
+import React from 'react'
 
 export const AppContext = React.createContext();
 
@@ -8,10 +8,21 @@ export class AppProvider extends React.Component {
         this.state = {
             page: 'dashboard',
             ...this.saveSettings(),
-            setPage: this.setPage
+            setPage: this.setPage,
+            confirmFavorites: this.confirmFavorites
         }
     } 
 
+    confirmFavorites = () => {
+        this.setState({
+            firstVisit: false,
+            page: 'dashboard'
+        })
+        localStorage.setItem('cryptoDash', JSON.stringify({
+            test: 'hello jello'
+        }));
+        // console.log('Hello for now');
+    }
     saveSettings(){
         let cryptoDashData = JSON.parse(localStorage.getItem('cryptoDash'));
         if (!cryptoDashData){
