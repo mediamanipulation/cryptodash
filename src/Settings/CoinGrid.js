@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {AppContext} from "../App/AppProvider";
+import {SelectableTile} from '../Shared/Tile'
 // import CoinTile from "./CoinTile";
 
 export const CoinGridStyled = styled.div`
@@ -25,7 +26,7 @@ export default function ({topSection}){
     {({coinList, favorites, filteredCoins}) => (
       <CoinGridStyled>
           {Object.keys(coinList).map(coinKey =>
-            <div> {coinKey} </div>
+            <SelectableTile> {coinKey} </SelectableTile>
           )}
       </CoinGridStyled>
     )}
