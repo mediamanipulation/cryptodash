@@ -21,7 +21,7 @@ export class AppProvider extends React.Component {
             page: 'dashboard'
         })
         localStorage.setItem('cryptoDash', JSON.stringify({
-            test: 'hello jello'
+            test: 'hello from confirmed favorites function AppProvider'
         }));
         // console.log('Hello for now');
     }

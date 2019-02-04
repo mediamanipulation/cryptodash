@@ -9,7 +9,7 @@ const ConfirmButtonStyled = styled.div`
 `
 export const CenterDiv = styled.div`
     display: grid;
-    justife-content: center;
+    justify-content: center;
 ` 
 export default function (){
     return  <AppContext.Consumer>
