@@ -13,7 +13,16 @@ export class AppProvider extends React.Component {
             confirmFavorites: this.confirmFavorites
         }
     } 
-    componentDidMount
+
+    componentDidMount = () => {
+        this.fetchCoins();
+    }
+
+    fetchCoins = async () => {
+        let coinList = (await cc.coinList()).Data;
+        this.setState({coinList});
+        // console.log(coinList);
+    }
 
     confirmFavorites = () => {
         this.setState({
